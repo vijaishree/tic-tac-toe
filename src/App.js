@@ -30,7 +30,8 @@ export default function Board(){
 
   if(winner === null) status = "Next Chance " + (xNext ? "X" : "O");
 
-  return(<>
+  return(
+  <>
   <div className = "status">{status}</div>
 
   <div className="board-row">
@@ -59,7 +60,7 @@ function Square({value, onSquareClick}){
 
 }
 
-function WinningDeclaration(squares){
+function WinningDeclaration(square){
 
   const lines =[
     [0, 1, 2],
@@ -74,11 +75,12 @@ function WinningDeclaration(squares){
 
   for(let i =0 ; i< lines.length ; i++){
 
-    let [a,b,c] = lines[i];
+    const [a,b,c] = lines[i];
 
-    if(squares[a] && squares[a] === squares[b] && squares[a]=== squares[c]) return squares[a];
+    if(square[a] && square[a] === square[b] && square[a]=== square[c]) return square[a];
 
-    return null ;
+   
   }
+  return null ;
 
 }
