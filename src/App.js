@@ -1,14 +1,22 @@
+import {useState} from 'react';
+
 export default function Board(){
 
   [square,setSquare] = useState(Array(9).fill(null));
+
+  [Xnext , setXNext] = useState(true);
 
   function handleClick(index){
 
     nextSquare = square.slice();
 
-    nextSquare[i] = "X";
+    if(Xnext) nextSquare[i] = "X";
+
+    if(!Xnext)nextSquare[i] = "O";
 
     setSquare(nextSquare);
+
+    setXNext(!XNext);
   }
 
   return(<>
