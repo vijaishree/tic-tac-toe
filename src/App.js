@@ -2,21 +2,21 @@ import {useState} from 'react';
 
 export default function Board(){
 
-  [square,setSquare] = useState(Array(9).fill(null));
+  const [square,setSquare] = useState(Array(9).fill(null));
 
-  [Xnext , setXNext] = useState(true);
+  const [xNext , setXNext] = useState(true);
 
   function handleClick(index){
 
-    nextSquare = square.slice();
+    const nextSquare = square.slice();
 
-    if(Xnext) nextSquare[i] = "X";
+    if(xNext) nextSquare[index] = "X";
 
-    if(!Xnext)nextSquare[i] = "O";
+    if(!xNext)nextSquare[index] = "O";
 
     setSquare(nextSquare);
 
-    setXNext(!XNext);
+    setXNext(!xNext);
   }
 
   return(<>
