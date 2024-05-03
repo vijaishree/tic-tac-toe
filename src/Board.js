@@ -23,6 +23,20 @@ export default function Board(){
         setXNext(!XNext);
     }
 
+    function GameStatus(square , xNext){
+        
+        let status; 
+        
+          const winner = WinningDeclaration(square);
+        
+          if(winner) status = "Winner " + winner ;
+        
+          else status = "Next Chance " + (xNext ? "X" : "O");
+        
+        return status;
+    
+        }
+
 
     return(<>
         <div className='status' data-testid = 'status'>{GameStatus(square , XNext)}</div> 
@@ -48,7 +62,7 @@ export default function Board(){
         <Square value={square[6]} onClick={ () => handleClick(6)}/>
         <Square value={square[7]} onClick={ () => handleClick(7)}/>
         <Square value={square[8]} onClick={ () => handleClick(8)}/>
-        
+
         </div>
         </>);
         
