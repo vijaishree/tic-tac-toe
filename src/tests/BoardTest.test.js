@@ -7,6 +7,7 @@ test('initiates a blank board', async () => {
     render(<Board />)
 
     const squares = screen.queryAllByTestId('square')
+
     expect(squares.length).toBe(9)
 
     expect(squares[0].textContent).toBe("")
@@ -20,6 +21,7 @@ test('initiates a blank board', async () => {
     expect(squares[8].textContent).toBe("")
 
     const stat = screen.queryAllByTestId("status");
+
     await waitForExpect(() => {
         expect(stat[0].textContent).toBe('Next Chance X');
     }, 2000, 50);
@@ -44,8 +46,11 @@ test('click not allowed on used square' , async() =>{
     const squares = screen.queryAllByTestId('square')
 
     fireEvent.click(squares[0])
+
     expect(squares[0].textContent).toBe('X');
+
     fireEvent.click(squares[0])
+    
     expect(squares[0].textContent).toBe('X');
     
 })

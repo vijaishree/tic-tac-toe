@@ -1,5 +1,5 @@
 {
-  "type":"module",
+  "type": "module",
   "name": "react.dev",
   "version": "0.0.0",
   "main": "/src/index.js",
@@ -7,13 +7,14 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "cypress":"cypress open",
+    "cypress": "cypress open",
     "eject": "react-scripts eject"
   },
   "dependencies": {
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
-    "react-scripts": "^5.0.0"
+    "react-scripts": "^5.0.0",
+    "wait-for-expect": "^3.0.2"
   },
   "devDependencies": {
     "@testing-library/react": "^15.0.6",
